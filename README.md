@@ -5,9 +5,13 @@ bitly 같은 URL 단축 서비스 만들기
 - 다음 요구사항을 만족하는 단축 URL 생성 API 개발- 단축 URL 생성 기능
 - 생성된 단축 URL로 요청시 원래 URL로 리다이렉트
 - 데이터 저장은 DB가 아닌 ArrayList에 저장
-- Optional) 단축된 URL에 대한 요청 횟수 저장 및 요청 횟수 조회 기능신경 써야 할 내용- 단축 URL로 어떤 값을 사용할 것 인가?
+- Optional) 단축된 URL에 대한 요청 횟수 저장 및 요청 횟수 조회 기능신경 써야 할 내용
+- 단축 URL로 어떤 값을 사용할 것 인가?
 
-- 나중에 프론트엔드 페이지가 추가된다면 이 API 서버가 그대로 활용될 수 있는가?참고할만한 링크- [짧게 줄인 URL의 실제 URL 확인 원리 및 방법](https://metalkin.tistory.com/50)
+-> 나중에 프론트엔드 페이지가 추가된다면 이 API 서버가 그대로 활용될 수 있는가?
+
+### 참고할만한 링크
+- [짧게 줄인 URL의 실제 URL 확인 원리 및 방법](https://metalkin.tistory.com/50)
 - [짧게 줄인 URL 알고리즘 고찰](https://metalkin.tistory.com/53)
 - [단축 URL 원리 및 개발](https://blog.siyeol.com/26)
 
