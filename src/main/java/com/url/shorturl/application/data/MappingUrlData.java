@@ -1,4 +1,7 @@
 package com.url.shorturl.application.data;
 
-public record MappingUrlData() {
+public record MappingUrlData(
+        String originUrl,
+        String shortUrl
+) {
 }

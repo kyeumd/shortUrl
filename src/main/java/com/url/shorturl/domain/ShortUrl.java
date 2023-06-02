@@ -2,12 +2,14 @@ package com.url.shorturl.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 
 @Slf4j
 @Getter
 @Setter
+@ToString
 public class ShortUrl {
 
     private Long id;
