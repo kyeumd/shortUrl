@@ -23,8 +23,7 @@ public class ShortURLController {
     @ResponseBody
     @PostMapping("/make/shorturl")
     public HttpEntity<MakeShortUrlResponse> makeShortUrl(@RequestBody MakeShortUrlRequest makeUrlRequest) {
-        log.info("make short url");
-        log.info(makeUrlRequest.originUrl());
+        log.info("make short url // origin : " + makeUrlRequest.originUrl());
 
         ShortUrlData shortUrlData = makeShortUrl.makeUrl(makeUrlRequest);
 
@@ -33,8 +32,7 @@ public class ShortURLController {
 
     @GetMapping("/{shortUrl}")
     public String redirectUrl(@PathVariable String shortUrl) {
-        log.info("redirect url");
-        log.info(shortUrl);
+        log.info("redirect url // shortUrl : " + shortUrl);
 
         MappingUrlData redirectUrl = findUrlProcessor.findUrl(shortUrl);
         log.info("origin url : " + redirectUrl.originUrl());

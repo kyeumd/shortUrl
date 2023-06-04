@@ -18,8 +18,7 @@ public class ShortUrlRepository {
 
         mappingUrl.setId(++sequence);
         mappingShortUrl.put(sequence, mappingUrl);
-        log.info("Repo save");
-        log.info("mapping Url info :  " + mappingUrl.toString());
+        log.info("Repo save // mapping Url info :  " + mappingUrl.toString());
         return mappingUrl;
     }
 
