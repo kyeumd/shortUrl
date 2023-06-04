@@ -14,10 +14,12 @@ public class ShortUrl {
 
     private Long id;
     private String originUrl;
+    private String shortUrl;
 
-    public ShortUrl(Long id, String originUrl) {
+    public ShortUrl(Long id, String originUrl, String shortUrl) {
         this.id = id;
         this.originUrl = originUrl;
+        this.shortUrl = shortUrl;
     }
 
     public static ShortUrl makeUrl(String originUrl) {
@@ -26,7 +28,8 @@ public class ShortUrl {
 
         return new ShortUrl(
                 null,
-                originUrl
+                originUrl,
+                mappingUrl
         );
 
     }
