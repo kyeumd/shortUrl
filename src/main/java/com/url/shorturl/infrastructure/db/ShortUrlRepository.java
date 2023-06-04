@@ -21,7 +21,7 @@ public class ShortUrlRepository {
         return mappingUrl;
     }
 
-    public static Optional<String> findUrlByShortUrl(String shortUrl) {
+    public Optional<String> findUrlByShortUrl(String shortUrl) {
         Optional<String> originString = mappingShortUrl.values().stream()
                 .filter(urlRepo -> shortUrl.equals(urlRepo.getShortUrl()))
                 .findFirst()
