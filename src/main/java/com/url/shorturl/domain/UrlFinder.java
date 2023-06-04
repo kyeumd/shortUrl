@@ -6,7 +6,6 @@ import java.util.Optional;
 
 public class UrlFinder {
     public Optional<String> findUrl(String shortUrl) {
-        Optional<String> url = ShortUrlRepository.findUrlByShortUrl(shortUrl);
-        return url;
+        return ShortUrlRepository.findUrlByShortUrl(shortUrl);
     }
 }
