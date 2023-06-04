@@ -20,9 +20,10 @@ public class ShortUrlProcessor {
         //todo-기존재 origin url 인지 체크하는 부분 필요 -> findUrl
 
 
-        ShortUrl saveShortUrl = mappingUrlInfoRepository.save(new ShortUrl(null, makeUrlRequest.originUrl(), null));
-        ShortUrl newShortUrl = ShortUrl.makeShortUrl(saveShortUrl);
-
-        return ShortUrlData.from(saveShortUrl);
+        ShortUrl newShortUrl = mappingUrlInfoRepository.save(new ShortUrl(null, makeUrlRequest.originUrl(), null));
+        ShortUrl mappingShortUrl = ShortUrl.makeShortUrl(newShortUrl);
+        ShortUrl savedShortUrl = mappingUrlInfoRepository.updateShortUrl(mappingShortUrl);
+        
+        return ShortUrlData.from(savedShortUrl);
     }
 }

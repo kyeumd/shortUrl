@@ -29,4 +29,10 @@ public class ShortUrlRepository {
         log.info("Repo origin : " + originString.toString());
         return originString;
     }
+
+    public ShortUrl updateShortUrl(ShortUrl shortUrl) {
+        ShortUrl savedShortUrl = mappingShortUrl.get(shortUrl.getId());
+        savedShortUrl.setShortUrl(shortUrl.getShortUrl());
+        return savedShortUrl;
+    }
 }
