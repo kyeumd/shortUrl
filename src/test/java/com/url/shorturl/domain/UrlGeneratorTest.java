@@ -9,9 +9,9 @@ class UrlGeneratorTest {
     @Test
     void gen() {
 
-        assertThat(UrlGenerator.gen(9L)).isEqualTo("9");
-        assertThat(UrlGenerator.gen(63L)).isEqualTo("11");
-        assertThat(UrlGenerator.gen(345L)).isEqualTo("Z5");
+        assertThat(UrlEncoder.gen(9L)).isEqualTo("9");
+        assertThat(UrlEncoder.gen(63L)).isEqualTo("11");
+        assertThat(UrlEncoder.gen(345L)).isEqualTo("Z5");
 
     }
 }

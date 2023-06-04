@@ -1,6 +1,6 @@
 package com.url.shorturl.domain;
 
-public class UrlGenerator {
+public class UrlEncoder {
     public static String gen(Long id) {
 
         return genShortUrl(id);

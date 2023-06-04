@@ -24,9 +24,9 @@ public class ShortUrl {
 
     public static ShortUrl makeShortUrl(ShortUrl shortUrl) {
 
-        String mappingUrl = UrlGenerator.gen(shortUrl.getId());
+        String mappingUrl = UrlEncoder.gen(shortUrl.getId());
         shortUrl.setShortUrl(mappingUrl);
-        
+
         return shortUrl;
     }
 
