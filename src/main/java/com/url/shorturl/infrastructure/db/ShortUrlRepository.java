@@ -35,4 +35,8 @@ public class ShortUrlRepository {
         savedShortUrl.setShortUrl(shortUrl.getShortUrl());
         return savedShortUrl;
     }
+
+    public ShortUrl findById(Long id) {
+        return mappingShortUrl.get(id);
+    }
 }
