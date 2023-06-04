@@ -4,7 +4,6 @@ import com.url.shorturl.domain.ShortUrl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -22,12 +21,4 @@ public class ShortUrlRepository {
         return mappingUrl;
     }
 
-    public static Optional<String> findUrlByShortUrl(String shortUrl) {
-        Optional<String> originString = mappingShortUrl.values().stream()
-                .filter(urlRepo -> shortUrl.equals(urlRepo.getShortUrl()))
-                .findFirst()
-                .map(ShortUrl::getOriginUrl);
-        log.info("Repo origin : " + originString.toString());
-        return originString;
-    }
 }
