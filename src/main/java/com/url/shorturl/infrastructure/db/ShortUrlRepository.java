@@ -4,14 +4,14 @@ import com.url.shorturl.domain.ShortUrl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 @Slf4j
 @Component
 public class ShortUrlRepository {
-    private static Map<Long, ShortUrl> mappingShortUrl = new HashMap<>();
+    private static ConcurrentMap<Long, ShortUrl> mappingShortUrl = new ConcurrentHashMap<>();
     private Long sequence = 0L;
 
     public ShortUrl save(ShortUrl mappingUrl) {
