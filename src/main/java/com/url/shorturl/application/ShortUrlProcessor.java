@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class MakeShortUrl {
+public class ShortUrlProcessor {
     private final ShortUrlRepository mappingUrlInfoRepository;
 
     public ShortUrlData makeUrl(MakeShortUrlRequest makeUrlRequest) {

@@ -1,7 +1,7 @@
 package com.url.shorturl.presentation;
 
 import com.url.shorturl.application.FindUrlProcessor;
-import com.url.shorturl.application.MakeShortUrl;
+import com.url.shorturl.application.ShortUrlProcessor;
 import com.url.shorturl.application.data.MappingUrlData;
 import com.url.shorturl.application.data.ShortUrlData;
 import com.url.shorturl.presentation.request.MakeShortUrlRequest;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class ShortURLController {
 
-    private final MakeShortUrl makeShortUrl;
+    private final ShortUrlProcessor shortUrlProcessor;
     private final FindUrlProcessor findUrlProcessor;
 
     @ResponseBody
@@ -25,7 +25,7 @@ public class ShortURLController {
     public HttpEntity<MakeShortUrlResponse> makeShortUrl(@RequestBody MakeShortUrlRequest makeUrlRequest) {
         log.info("make short url // origin : " + makeUrlRequest.originUrl());
 
-        ShortUrlData shortUrlData = makeShortUrl.makeUrl(makeUrlRequest);
+        ShortUrlData shortUrlData = shortUrlProcessor.makeUrl(makeUrlRequest);
 
         return new HttpEntity<>(MakeShortUrlResponse.from(shortUrlData));
     }
