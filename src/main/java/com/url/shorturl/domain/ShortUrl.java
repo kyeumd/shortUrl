@@ -2,12 +2,14 @@ package com.url.shorturl.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 
 @Slf4j
 @Getter
 @Setter
+@ToString
 public class ShortUrl {
 
     private Long id;
@@ -20,16 +22,12 @@ public class ShortUrl {
         this.shortUrl = shortUrl;
     }
 
-    public static ShortUrl makeUrl(String originUrl) {
+    public static ShortUrl makeShortUrl(ShortUrl shortUrl) {
 
-        String mappingUrl = UrlGenerator.gen();
+        String mappingUrl = UrlEncoder.gen(shortUrl.getId());
+        shortUrl.setShortUrl(mappingUrl);
 
-        return new ShortUrl(
-                null,
-                originUrl,
-                mappingUrl
-        );
-
+        return shortUrl;
     }
 
 }
