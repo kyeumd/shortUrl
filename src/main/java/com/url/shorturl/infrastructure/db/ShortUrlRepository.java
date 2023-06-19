@@ -15,19 +15,28 @@ public class ShortUrlRepository {
     private Long sequence = 0L;
 
     public ShortUrl save(ShortUrl mappingUrl) {
-
         mappingUrl.setId(++sequence);
         mappingShortUrl.put(sequence, mappingUrl);
         log.info("Repo save // mapping Url info :  " + mappingUrl.toString());
         return mappingUrl;
     }
 
-    public static Optional<String> findUrlByShortUrl(String shortUrl) {
+    public Optional<String> findUrlByShortUrl(String shortUrl) {
         Optional<String> originString = mappingShortUrl.values().stream()
                 .filter(urlRepo -> shortUrl.equals(urlRepo.getShortUrl()))
                 .findFirst()
                 .map(ShortUrl::getOriginUrl);
         log.info("Repo origin : " + originString.toString());
         return originString;
+    }
+
+    public ShortUrl updateShortUrl(ShortUrl shortUrl) {
+        ShortUrl savedShortUrl = mappingShortUrl.get(shortUrl.getId());
+        savedShortUrl.setShortUrl(shortUrl.getShortUrl());
+        return savedShortUrl;
+    }
+
+    public ShortUrl findById(Long id) {
+        return mappingShortUrl.get(id);
     }
 }

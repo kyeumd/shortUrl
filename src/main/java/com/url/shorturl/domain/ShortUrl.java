@@ -22,16 +22,12 @@ public class ShortUrl {
         this.shortUrl = shortUrl;
     }
 
-    public static ShortUrl makeUrl(String originUrl) {
+    public static ShortUrl makeShortUrl(ShortUrl shortUrl) {
 
-        String mappingUrl = UrlGenerator.gen();
+        String mappingUrl = UrlEncoder.gen(shortUrl.getId());
+        shortUrl.setShortUrl(mappingUrl);
 
-        return new ShortUrl(
-                null,
-                originUrl,
-                mappingUrl
-        );
-
+        return shortUrl;
     }
 
 }
